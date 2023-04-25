@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Calculadora</title>
+   <h1>Calculadora</h1> 
+  <p>  Numero 1:<input type="text" id="inNum1"> </p>    
+  <p>  numero 2:<input type="text" id="inNum2"> </p> 
+  <h3>Operações:</h3>
+     <p><input type="button" value="+" onclick=Somar()> <input type="button" value="-" onclick=Diminuir()></p>
+     <p><input type="button" value="/" onclick=Dividir()> <input type="button" value="x" onclick=Multiplicar()></p>
+     <input type="button" value="Limpar" onclick=Limpar()></p>
+
+    
+</head>
+<body>
+    <pre><p id=outResposta1></p></pre>
+    <pre><p id=outResposta2></p></pre>
+    <pre><p id=outResposta3></p></pre>
+    <pre><p id=outResposta4></p></pre>
+    <script>
+        var soma="", subtracao="", divisao="", Multiplicacao=""
+function Somar() {
+
+var outResposta1=document.getElementById("outResposta1");
+var inNum1=document.getElementById("inNum1");
+var inNum2=document.getElementById("inNum2");
+
+inNum1=Number(inNum1.value);
+inNum2=Number(inNum2.value);
+
+var soma=(inNum1+inNum2);
+
+
+outResposta1.textContent="Soma dos numeros:" + soma;
+
+
+
+}
+
+function Diminuir() {
+
+var outResposta2=document.getElementById("outResposta2");
+var inNum1=document.getElementById("inNum1");
+var inNum2=document.getElementById("inNum2");
+
+inNum1=Number(inNum1.value);
+inNum2=Number(inNum2.value);
+
+var subtracao=(inNum1-inNum2);
+
+
+outResposta2.textContent="Subtração dos numeros:" + subtracao;
+
+
+}
+function Dividir() {
+
+var outResposta3=document.getElementById("outResposta3");
+var inNum1=document.getElementById("inNum1");
+var inNum2=document.getElementById("inNum2");
+
+inNum1=Number(inNum1.value);
+inNum2=Number(inNum2.value);
+
+var divisao=(inNum1/inNum2);
+
+
+outResposta3.textContent="Divisão dos números:" + divisao;
+
+
+}
+
+function Multiplicar() {
+
+var outResposta4=document.getElementById("outResposta4");
+var inNum1=document.getElementById("inNum1");
+var inNum2=document.getElementById("inNum2");
+
+inNum1=Number(inNum1.value);
+inNum2=Number(inNum2.value);
+
+var Multiplicacao=(inNum1*inNum2);
+
+
+outResposta4.textContent="Multiplicação dos números:" + Multiplicacao;
+
+
+}
+function Limpar(){
+    document.getElementById("inNum1").value="";
+    document.getElementById("inNum2").value="";
+    document.getElementById("outResposta1").textContent="";
+    document.getElementById("outResposta2").textContent="";
+    document.getElementById("outResposta3").textContent="";
+    document.getElementById("outResposta4").textContent="";
+}
+
+    </script>
+</body>
+</html>

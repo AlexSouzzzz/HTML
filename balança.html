@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balança</title>
+</head>
+<body>
+    <h1> Balança</h1>
+    <p> Insira os pesos em KG:<input type="Number" id="inPeso">
+                        <input type="button" id="btAdiciona" value="Proximo peso" onclick="proximo()"></p>
+    <p><input type="button" id="btnCalc" value="Calcular" onclick="Calcular()">
+
+    
+       <h3><pre><p id="outResposta1"></p></pre></h3>
+       <h3><pre><p id="outResposta2"></p></pre></h3>
+       <h3><pre><p id="outResposta3"></p></pre></h3>
+       <h3><pre><p id="outResposta4"></p></pre></h3>
+       <script>
+           var pesos=[]
+           function proximo()  {
+               var inPeso=document.getElementById("inPeso");
+               var outResposta1=document.getElementById("outResposta1");
+
+               pesos.push(inPeso.value);
+
+               inPeso.value="";
+               inPeso.focus();
+
+               outResposta1.textContent="Pesos em KG:" + pesos +", ";
+            }
+            
+
+            function Calcular(){
+     var media=0, maior=0, menor=0;
+
+       maior=Math.max.apply(Math,pesos)
+
+
+    outResposta2.textContent="maior peso:"+maior;
+
+    menor=Math.min.apply(Math,pesos)
+    outResposta3.textContent="menor peso:"+menor;
+
+     for(i=0;i<pesos.length;i++){
+         media=media+pesos[i]/pesos.length}
+     
+    outResposta4.textContent="media de pesos:"+ media;
+            }
+        </script>
+</body>
+</html>
